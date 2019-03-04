@@ -22,6 +22,7 @@ public class StarMap extends PApplet
         loadData();
         printStars();
         border = width * 0.05f;
+        map1(25,20,30,30,40);
     }
 
     public void loadData()
@@ -93,6 +94,30 @@ public class StarMap extends PApplet
 
         }
     } 
+
+    public float map1(float a,float b, float c, float d, float e){
+        //eg 4 0, 5, 0, 100 -> a should be 80
+        float ratio1 = 0;
+        float ratio2 = 0;
+
+        if(d < 0){
+            d=d*(-1);
+        }
+        if(b < 0){
+            b=b*(-1);
+        }
+
+        //a between b and c
+
+        ratio1 = c+b;
+        ratio2 = d+e;
+
+        a = (a/ratio1)*ratio2;
+
+
+        //therefor a = a*(e-d)/(c-b)
+        return a;
+    }
 
     public void mouseClicked()
     {
