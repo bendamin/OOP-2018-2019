@@ -1,5 +1,7 @@
 package ie.dit;
 
+import processing.core.PVector;
+
 public class Main
 {	
 
@@ -35,10 +37,47 @@ public class Main
         processing.core.PApplet.runSketch( a, new StarMap());
 		
 	}
+	
+	public void cafeRubis()
+	{
+		String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new CafeRubis());
+		
+	}
+
+	public void yasc()
+	{
+		String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new YASC());
+		
+	}
+
+	public void audio1()
+	{
+		String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new Audio1());
+		
+	}
 
 	public static void main(String[] args)
 	{
+
+		PVector a = new PVector(0, 5);
+		PVector b = new PVector(10, -2);
+		PVector c = new PVector();
+
+		// a += b;
+		a.add(b);
+		// c = a + b;
+		c = PVector.add(a, b);
+		// static method call, on the class not the instance
+		c.normalize();
+		c.mag(); 
+
+		
 		Main main = new Main();
-		main.starMap();			
+		main.yasc();		
+		
+		
 	}
 }
